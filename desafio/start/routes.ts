@@ -9,6 +9,7 @@
 
 import router from '@adonisjs/core/services/router'
 
+router.group(() => {
 router.get('/', async () => {
   return {
     hello: 'world',
@@ -17,7 +18,7 @@ router.get('/', async () => {
 
 router.post('/users', async () => {
   return {
-    userscontroller: 'create',
+    userscontroller: 'store',
   }
 })
 
@@ -41,7 +42,7 @@ router.patch('/users/:id', async () => {
 
 router.post('/users/:id/classes', async () => {
   return {
-    classescontroller: 'create',
+    classescontroller: 'store',
   }
 })
 
@@ -75,3 +76,4 @@ router.patch('/users/:id/classes/:classId/:studentId', async () => {
     classescontroller: 'update',
   }
 })
+}).prefix('/api')

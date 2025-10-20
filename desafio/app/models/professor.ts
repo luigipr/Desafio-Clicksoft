@@ -9,8 +9,7 @@ const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   passwordColumnName: 'password',
 })
 
-export default class User extends compose(BaseModel, AuthFinder) {
-  @column({ isPrimary: true })
+export default class Professor extends compose(BaseModel, AuthFinder) {@column({ isPrimary: true })
   declare id: number
 
   @column()
@@ -27,9 +26,6 @@ export default class User extends compose(BaseModel, AuthFinder) {
 
   @column()
   declare matricula: number
-
-  @column()
-  declare tipo: string | null
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime

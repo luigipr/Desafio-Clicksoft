@@ -9,23 +9,17 @@ const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   passwordColumnName: 'password',
 })
 
-export default class User extends compose(BaseModel, AuthFinder) {@column({ isPrimary: true })
+export default class Class extends compose(BaseModel, AuthFinder) {@column({ isPrimary: true })
   declare id: number
 
   @column()
-  declare fullName: string | null
+  declare classNum: number | null
 
   @column()
-  declare email: string
-
-  @column({ serializeAs: null })
-  declare password: string
-
-  @column.dateTime()
-  declare nascimento: DateTime
+  declare capacity: number | null
 
   @column()
-  declare matricula: number
+  declare availability: boolean | true
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
